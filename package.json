@@ -5,7 +5,6 @@
   "license": "ISC",
   "author": "razor2246",
   "type": "module",
-  "main": "index.js",
   "homepage": "https://razor2246-del.github.io/cinema",
   "scripts": {
     "start": "webpack serve --mode development",
