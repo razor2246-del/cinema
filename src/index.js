@@ -6,7 +6,7 @@ import App from './js/App.jsx';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/cinema">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
