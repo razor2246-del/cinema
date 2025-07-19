@@ -1,15 +1,16 @@
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default {
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/cinema/', // Убедитесь, что это соответствует названию вашего репозитория
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -18,25 +19,44 @@ export default {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        },
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-    ],
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource'
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
+      template: './src/index.html',
+      filename: 'index.html'
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/404.html', to: '404.html' }
+      ]
+    })
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    port: 3000,
+    hot: true,
+    historyApiFallback: true
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
-  },
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
 };
