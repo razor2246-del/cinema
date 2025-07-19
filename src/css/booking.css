@@ -1,0 +1,303 @@
+.booking-container {
+  max-width: 990px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(241, 235, 230, 0.95);
+  padding-bottom: 20px;
+  border-radius: 2px;
+}
+
+.booking-movie-info {
+  padding: 15px;
+  margin: 0;
+  background: white;
+}
+
+.booking-movie-info h2 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 7px;
+}
+
+.booking-movie-info p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  margin: 5px 0;
+}
+
+.cinema-hall {
+  padding: 20px;
+  background: #171D24;
+}
+
+.screen {
+  width: 80%;
+  height: 30px;
+  margin: 0 auto 40px;
+  background: url('../img/screen.png') center/contain no-repeat;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.seats-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 30px;
+}
+
+.seats-row {
+  display: flex;
+  gap: 4px;
+}
+
+.seat {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  background: transparent;
+  border: 1px solid #525252;
+}
+
+.seat-available {
+  background: #FFFFFF;
+}
+
+.seat-vip {
+  background: #F9953A;
+}
+
+.seat-selected {
+  background: #25C4CE;
+  box-shadow: 0px 0px 4px #16A6AF;
+  border: 1px solid #525252;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.seat-occupied {
+  background: transparent;
+  cursor: default;
+}
+
+.seat-none {
+  background: transparent;
+  border: 1px solid #525252;
+  cursor: default;
+  visibility: hidden
+}
+
+.hall-info {
+  margin-top: 30px;
+}
+
+.legend-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  max-width: 930px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.legend-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-item span {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.booking-actions {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.book-button {
+  background: #16A6AF;
+  color: white;
+  border: none;
+  padding: 12px 57px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
+  transition: background 0.3s;
+}
+
+.book-button:hover {
+  background: #13949c;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.confirmation-container {
+  max-width: 990px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.confirmation-header {
+  padding: 25px 15px;
+  position: relative;
+    background: rgba(241, 235, 230, 0.95);
+  z-index:1;
+  margin-bottom: 0px;
+}
+
+.confirmation-content {
+  padding: 0 15px;
+  position: relative;
+  background: rgba(241, 235, 230, 0.95);
+  z-index: 1;
+  padding-bottom: 20px;
+  margin-top: -8px;
+}
+
+.confirmation-header::before,
+.confirmation-header::after,
+.confirmation-content::before,
+.confirmation-content::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent url('../img/dot.png') 0 0 repeat-x;
+  background-size: 10px 4px;
+  z-index: 2;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.confirmation-header::after,
+.confirmation-content::after {
+  transform: rotate(180deg);
+  background-position: -1px 0;
+}
+
+.confirmation-header::before {
+  top: -3px;
+}
+
+.confirmation-header::after {
+  bottom: -3px;
+}
+
+.confirmation-content::before {
+  top: -3px;
+}
+
+.confirmation-content::after {
+  bottom: -3px;
+}
+
+.ticket-info p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+  margin: 14px 0;
+}
+
+.get-code-button {
+  background: #16A6AF;
+  color: white;
+  border: none;
+  padding: 12px 57px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
+  display: block;
+  margin: 40px auto;
+  width: 337px;
+  height: 40px;
+}
+
+.confirmation-footer {
+  margin: 60px 0 20px;
+}
+
+.confirmation-footer p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  margin: 8px 0;
+}
+
+.confirmation-footer p:first-child {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .legend-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .legend-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .screen {
+    margin-bottom: 20px;
+  }
+  
+  .seats-row {
+    gap: 2px;
+  }
+  
+  .seat {
+    width: 12px;
+    height: 12px;
+  }
+}

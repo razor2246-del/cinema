@@ -1,0 +1,169 @@
+.seat-choose-sector {
+    width:70%;
+    height: 90%;
+    left:15%;
+    position: relative;
+    background:rgba(255, 255, 255, 0.9);
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+.choose-seat {
+    width:auto;
+    height: 70%;
+    position: relative;
+    background:rgba(21, 21, 60, 1);
+    box-sizing: border-box;
+}
+
+.time-info {
+    font-weight: 100;
+}
+
+.info {
+    margin-left: 30px;
+}
+
+.cinema-screen {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.seats-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.seat {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.seat:hover:not(.occupied) {
+    transform: scale(1.1);
+}
+
+.free {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.vip {
+    background-color: #FFC107;
+    color: #333;
+}
+
+.occupied {
+    background-color: #F44336;
+    color: white;
+    cursor: not-allowed;
+}
+
+.selected {
+    background-color: #2196F3;
+    color: white;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.row-label {
+    width: 20px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.row-container {
+    display: flex;
+    align-items: center;
+}
+
+.booking-btn {
+    display: block; 
+    margin: auto;
+    margin-top: 2%;
+    background: rgb(0, 195, 255);
+    border: none;
+    width: 200px;
+    height: 30px;
+    box-shadow: 1px 1px 1px 1px black; 
+}
+
+.booking-btn:active {
+    background: rgb(55, 0, 255);
+    transform: scale(0.98);
+    box-shadow: 1px 1px 1px 1px black; 
+}
+
+@media (max-width: 768px) {
+  .seat-choose-sector {
+    width: 90%;
+    left: 5%;
+  }
+  
+  .seat {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .seat {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  
+  .row {
+    gap: 5px;
+  }
+  
+  .legend {
+    flex-direction: column;
+    align-items: center;
+  }
+}

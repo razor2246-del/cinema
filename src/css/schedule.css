@@ -1,0 +1,176 @@
+.movie-section {
+  width: 100%;
+  background: rgba(241, 235, 230, 0.95);
+  border-radius: 2px;
+  margin-bottom: 30px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.movie__info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.movie__poster {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.movie__poster-image {
+  width: 125px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.movie__poster::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  background-color: #393939;
+  width: 3px;
+  height: 5px;
+  border-width: 14.4px 0px 0px 6.4px;
+  border-style: solid;
+  border-color: #393939;
+  z-index: -1;
+}
+
+.movie__description {
+  flex: 1;
+}
+
+.movie__title {
+  margin: 0 0 10px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+.movie__synopsis-text {
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.movie__data {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.movie__duration,
+.movie__country {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.movie-seances__hall {
+  margin-top: 20px;
+}
+
+.movie-seances__hall--second {
+  margin-top: 30px;
+}
+
+.hall__name {
+  margin: 0 0 10px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+
+.hall__sessions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.session-item {
+  width: 53px;
+  height: 33px;
+}
+
+.session-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.session-link:hover {
+  background: #f8f8f8;
+  border-color: #4a6bff;
+  color: #4a6bff;
+}
+
+.session-link.passed {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  color: #999;
+  background: #f0f0f0;
+  border-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .movie__info {
+    flex-direction: column;
+  }
+  
+  .movie__poster {
+    margin: 0 auto 15px;
+  }
+  
+  .hall__sessions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .movie__poster-image {
+    width: 100px;
+    height: 140px;
+  }
+  
+  .session-item {
+    width: 40px;
+    height: 25px;
+  }
+  
+  .session-link {
+    font-size: 12px;
+  }
+}

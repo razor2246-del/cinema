@@ -1,0 +1,91 @@
+.auth-container {
+  max-width: 480px;
+  background: #EAE9EBF2;
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+.auth-header {
+  padding: 16px;
+  background: #63536C;
+  text-align: center;
+}
+
+.auth-header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.auth-header h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.form-group-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2px;
+    margin-top: 15px;
+}
+
+.form-group-auth label {
+  width: auto;
+  height: 14px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #848484;
+  margin-bottom: 2px;
+}
+
+.form-group-auth input {
+  box-sizing: border-box;
+  height: 36px;
+  padding: 8px;
+  background: #FFFFFF;
+  border: 1px solid #B7B7B7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.auth-button {
+  display: block;
+  width: 189px;
+  height: 40px;
+  margin: 17px auto 20px;
+  background: #16A6AF;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24), 0px 0px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ff0000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+}

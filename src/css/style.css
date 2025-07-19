@@ -1,0 +1,313 @@
+@font-face { 
+  font-family: 'Roboto'; 
+  src: url('../fonts/Roboto-Regular.woff2') format('woff2'), 
+       url('../fonts/Roboto-Regular.woff') format('woff'), 
+       url('../fonts/Roboto-Regular.ttf') format('truetype'); 
+  font-weight: 400; 
+  font-style: normal; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body.guest {
+    background: url("../img/bg.jpg") no-repeat fixed;
+    background-size: cover;
+}
+
+.container {
+  width: 990px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.logo-wrapper {
+    max-width: 990px;
+    margin: 0 auto;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: 900;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.logo-part {
+    font-weight: 100;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.login-button {
+  display: flex;
+  flex-direction: column;
+  width: 71px;
+  height: 40px;
+  border-radius: 3px;
+  padding: 12px;
+  background-color: #16A6AF;
+  color: white;
+  border: none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.12), 0 0 3px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #138b94;
+}
+
+.admin-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  color: white;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.admin-subtitle {
+  position: absolute;
+  font-size: 1.2rem;
+  letter-spacing: 0.5em;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 5px 0 0;
+  transform: scaleX(0.50);
+  margin-left: 0;
+  top: 50px;
+  left: -95px;
+}
+
+@media (max-width: 768px) {
+  .container, .admin-container, .booking-container, .ticket-container, .date-strip-container {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .date-strip-container {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  .dates-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .date-item {
+    margin: 5px;
+    padding: 8px;
+    height: auto;
+    width: 60px;
+    text-align: center;
+  }
+  
+  .movie-section, .movie__info {
+    flex-direction: column;
+  }
+  
+  .movie__poster {
+    margin: 0 auto 15px;
+  }
+  
+  .hall__sessions, .legend-grid {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .conf-step__wrapper {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .conf-step__seances-timeline {
+    width: 100%;
+  }
+  
+  .popup-content {
+    width: 90%;
+  }
+  
+  .form-group {
+    width: 90%;
+  }
+  
+  .cinema-hall {
+    padding: 10px;
+  }
+  
+  .screen {
+    width: 90%;
+  }
+  
+  .seats-grid {
+    gap: 2px;
+  }
+  
+  .seat {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .admin-container {
+    padding: 0 20px;
+  }
+  
+  .admin-header {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  
+  .admin-content {
+    width: 100%;
+  }
+  
+  .admin-section {
+    width: 100%;
+  }
+  
+  .section-header {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+  }
+  
+  .section-content {
+    padding-left: 20px;
+  }
+  
+  .films-grid {
+    justify-content: center;
+  }
+  
+  .film-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 390px) {
+  .container, .admin-container, .booking-container, .ticket-container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .date-strip-container {
+    display: none;
+  }
+  
+  .movie__poster-image {
+    width: 100px;
+    height: 140px;
+  }
+  
+  .session-item {
+    width: 40px;
+    height: 25px;
+  }
+  
+  .auth-container {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .form-group-auth input {
+    width: 90%;
+  }
+  
+  .booking-actions .book-button {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .get-code-button {
+    width: 90%;
+  }
+  
+  .seat-choose-sector {
+    width: 95%;
+    left: 2.5%;
+  }
+  
+  .seat {
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+  }
+  
+  .conf-step__chair {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .conf-step__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .conf-step__button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .popup-actions {
+    flex-direction: column;
+  }
+  
+  .popup-actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .admin-container {
+    width: 100%;
+  }
+
+  .admin-header {
+    padding: 15px;
+  }
+  
+  .admin-header__title h1 {
+    font-size: 24px;
+  }
+  
+  .section-header h2 {
+    font-size: 18px;
+  }
+  
+  .film-item {
+    width: 100%;
+  }
+  
+  .conf-step__seances-movie {
+    height: 30px;
+  }
+  
+  .screen {
+    margin-bottom: 20px;
+  }
+  
+  .seats-row {
+    gap: 2px;
+  }
+  
+  .seat {
+    width: 12px;
+    height: 12px;
+  }
+}
