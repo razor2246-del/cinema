@@ -1,4 +1,3 @@
-// DateStrip.jsx - corrected version
 import React, { useState, useEffect, useRef } from 'react';
 
 const DateStrip = ({ onDateSelect }) => {
