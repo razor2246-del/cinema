@@ -9,8 +9,18 @@ export default {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/'
+    filename: '[name].[contenthash].js', 
+    publicPath: '/cinema/',
+    clean: true 
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      filename: '[name].[contenthash].chunk.js' 
+    },
+    runtimeChunk: {
+      name: entrypoint => `runtime-${entrypoint.name}` 
+    }
   },
   module: {
     rules: [
@@ -30,7 +40,10 @@ export default {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource', 
+        generator: {
+          filename: 'images/[name].[contenthash][ext]'
+        }
       }
     ]
   },
@@ -41,7 +54,8 @@ export default {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/404.html', to: '404.html' }
+        { from: 'src/404.html', to: '404.html' },
+        { from: '.nojekyll', to: '.' }
       ]
     })
   ],
