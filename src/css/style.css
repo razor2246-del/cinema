@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', Arial, sans-serif;
+    width: 100%;
 }
 
 body.guest {
@@ -37,7 +38,6 @@ body.guest {
 .logo-text {
     font-weight: 900;
     margin: 0;
-    margin-top: 20px;
 }
 
 .logo-part {
@@ -88,226 +88,38 @@ body.guest {
   margin: 5px 0 0;
   transform: scaleX(0.50);
   margin-left: 0;
-  top: 50px;
-  left: -95px;
+  top: 30px;
+  left: -99px;
 }
 
 @media (max-width: 768px) {
-  .container, .admin-container, .booking-container, .ticket-container, .date-strip-container {
+  .container {
     width: 100%;
     padding: 15px;
   }
   
-  .date-strip-container {
-    width: 100%;
-    height: auto;
-    padding: 10px 0;
-  }
-  
-  .dates-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .date-item {
-    margin: 5px;
-    padding: 8px;
-    height: auto;
-    width: 60px;
+  .logo-wrapper {
+    align-items: center;
     text-align: center;
-  }
-  
-  .movie-section, .movie__info {
-    flex-direction: column;
-  }
-  
-  .movie__poster {
-    margin: 0 auto 15px;
-  }
-  
-  .hall__sessions, .legend-grid {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .conf-step__wrapper {
-    width: 100%;
-    padding: 10px;
-  }
-  
-  .conf-step__seances-timeline {
-    width: 100%;
-  }
-  
-  .popup-content {
-    width: 90%;
-  }
-  
-  .form-group {
-    width: 90%;
-  }
-  
-  .cinema-hall {
-    padding: 10px;
-  }
-  
-  .screen {
-    width: 90%;
-  }
-  
-  .seats-grid {
-    gap: 2px;
-  }
-  
-  .seat {
-    width: 15px;
-    height: 15px;
+    padding: 15px;
   }
   
   .admin-container {
-    padding: 0 20px;
-  }
-  
-  .admin-header {
     width: 100%;
-    padding: 20px;
-    height: auto;
-  }
-  
-  .admin-content {
-    width: 100%;
-  }
-  
-  .admin-section {
-    width: 100%;
-  }
-  
-  .section-header {
-    width: 100%;
-    padding: 20px;
-    height: auto;
-  }
-  
-  .section-content {
-    padding-left: 20px;
-  }
-  
-  .films-grid {
-    justify-content: center;
-  }
-  
-  .film-item {
-    width: 45%;
+    padding: 15px;
   }
 }
 
 @media (max-width: 390px) {
-  .container, .admin-container, .booking-container, .ticket-container {
-    width: 100%;
+  .container {
     padding: 10px;
   }
   
-  .date-strip-container {
-    display: none;
-  }
-  
-  .movie__poster-image {
-    width: 100px;
-    height: 140px;
-  }
-  
-  .session-item {
-    width: 40px;
-    height: 25px;
-  }
-  
-  .auth-container {
-    width: 100%;
-    max-width: none;
-  }
-  
-  .form-group-auth input {
-    width: 90%;
-  }
-  
-  .booking-actions .book-button {
-    width: 90%;
-    padding: 10px;
-  }
-  
-  .get-code-button {
-    width: 90%;
-  }
-  
-  .seat-choose-sector {
-    width: 95%;
-    left: 2.5%;
-  }
-  
-  .seat {
-    width: 25px;
-    height: 25px;
-    font-size: 10px;
-  }
-  
-  .conf-step__chair {
-    width: 15px;
-    height: 15px;
-  }
-  
-  .conf-step__buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .conf-step__button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .popup-actions {
-    flex-direction: column;
-  }
-  
-  .popup-actions button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .admin-container {
-    width: 100%;
-  }
-
-  .admin-header {
-    padding: 15px;
-  }
-  
-  .admin-header__title h1 {
+  .logo-text {
     font-size: 24px;
   }
   
-  .section-header h2 {
-    font-size: 18px;
-  }
-  
-  .film-item {
-    width: 100%;
-  }
-  
-  .conf-step__seances-movie {
-    height: 30px;
-  }
-  
-  .screen {
-    margin-bottom: 20px;
-  }
-  
-  .seats-row {
-    gap: 2px;
-  }
-  
-  .seat {
-    width: 12px;
-    height: 12px;
+  .login-button {
+    margin-top: 10px;
   }
 }

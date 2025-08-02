@@ -1,3 +1,4 @@
+// DateStrip.jsx - corrected version
 import React, { useState, useEffect, useRef } from 'react';
 
 const DateStrip = ({ onDateSelect }) => {
@@ -30,12 +31,14 @@ const DateStrip = ({ onDateSelect }) => {
     const today = new Date();
     const isToday = date.toDateString() === today.toDateString();
     const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+    const isTodayWithOffset = isToday && offset === 0;
     
     return {
       dayName: days[date.getDay()],
       dayNumber: date.getDate(),
       isToday,
-      isWeekend
+      isWeekend,
+      isTodayWithOffset
     };
   };
 
@@ -45,6 +48,9 @@ const DateStrip = ({ onDateSelect }) => {
   };
 
   const getItemWidth = (isSelected) => {
+    if (window.innerWidth <= 390 && isSelected) return 75;
+    if (window.innerWidth <= 768 && isSelected) return 187;
+    
     const container = datesContainerRef.current;
     if (!container) return isSelected ? 240 : 150;
 
@@ -66,7 +72,7 @@ const DateStrip = ({ onDateSelect }) => {
     <div className="date-strip-container">
       <div className="dates-container" ref={datesContainerRef}>
         {dates.map((date, index) => {
-          const { dayName, dayNumber, isToday, isWeekend } = formatDate(date);
+          const { dayName, dayNumber, isTodayWithOffset, isWeekend } = formatDate(date);
           const isSelected = selectedDate?.toDateString() === date.toDateString();
           const textColor = isWeekend ? 'red' : 'inherit';
           
@@ -83,10 +89,10 @@ const DateStrip = ({ onDateSelect }) => {
               }}
             >
               <div className="date-line first-line" style={{ color: textColor }}>
-                {isToday && offset === 0 ? 'Сегодня' : dayName}
+                {isTodayWithOffset ? 'Сегодня' : dayName}
               </div>
               <div className="date-line second-line" style={{ color: textColor }}>
-                {dayNumber}
+                {isTodayWithOffset ? `${dayName}, ${dayNumber}` : dayNumber}
               </div>
             </div>
           );

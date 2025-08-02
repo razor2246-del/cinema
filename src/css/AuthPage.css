@@ -56,7 +56,8 @@
 
 .form-group-auth input {
   box-sizing: border-box;
-  height: 36px;
+  height: 52px;
+  width: 272px;
   padding: 8px;
   background: #FFFFFF;
   border: 1px solid #B7B7B7;
@@ -88,4 +89,21 @@
   font-size: 14px;
   text-align: center;
   margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .form-group-auth input {
+    width: 90%;
+  }
+  
+  .auth-button {
+    width: 90%;
+  }
 }

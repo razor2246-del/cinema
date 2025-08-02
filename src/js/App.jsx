@@ -6,9 +6,11 @@ import BookingConfirmation from '../js/BookingConfirmation';
 import TicketConfirmation from '../js/TicketConfirmation';
 import AuthPage from "../js/AuthPage.jsx";
 import AdminPanel from '../js/AdminPanel.jsx';
+import '../css/style.css';
 import '../css/schedule.css';
 import '../css/DateStrip.css';
-import '../css/style.css';
+import '../css/AdminPanel.css';
+
 
 function App() {
   const location = useLocation();

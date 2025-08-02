@@ -11,7 +11,9 @@ import {
   createSeance,
   deleteSeance
 } from '../api/api';
+import '../css/style.css';
 import '../css/AdminPanel.css';
+
 
 const AdminPanel = ({ onLogout }) => {
   const [posterFile, setPosterFile] = useState(null);
@@ -113,43 +115,51 @@ const AdminPanel = ({ onLogout }) => {
   };
 
   const handleRowsInputChange = (e) => {
-    const value = e.target.value;
-    setRowsInput(value);
-    
-    if (value !== '' && !isNaN(value)) {
-      const num = parseInt(value) || 1;
-      setRows(num);
-      
-      const newConfig = Array(num).fill().map((_, rowIndex) => {
-        if (rowIndex < hallConfig.length) {
-          return [...hallConfig[rowIndex]].slice(0, seatsPerRow).map(seat => seat || 'standart');
-        }
-        return Array(seatsPerRow).fill('standart');
-      });
-      
-      setHallConfig(newConfig);
+  const value = e.target.value;
+  setRowsInput(value);
+  
+  if (value !== '' && !isNaN(value)) {
+    const num = parseInt(value) || 1;
+    if (num < 1) {
+      alert('Количество рядов должно быть положительным числом');
+      return;
     }
-  };
+    setRows(num);
+    
+    const newConfig = Array(num).fill().map((_, rowIndex) => {
+      if (rowIndex < hallConfig.length) {
+        return [...hallConfig[rowIndex]].slice(0, seatsPerRow).map(seat => seat || 'standart');
+      }
+      return Array(seatsPerRow).fill('standart');
+    });
+    
+    setHallConfig(newConfig);
+  }
+};
 
   const handleSeatsInputChange = (e) => {
-    const value = e.target.value;
-    setSeatsInput(value);
-    
-    if (value !== '' && !isNaN(value)) {
-      const num = parseInt(value) || 1;
-      setSeatsPerRow(num);
-      
-      const newConfig = hallConfig.map(row => 
-        row.slice(0, num).map(seat => seat || 'standart')
-      );
-      
-      while (newConfig.length < rows) {
-        newConfig.push(Array(num).fill('standart'));
-      }
-      
-      setHallConfig(newConfig);
+  const value = e.target.value;
+  setSeatsInput(value);
+  
+  if (value !== '' && !isNaN(value)) {
+    const num = parseInt(value) || 1;
+    if (num < 1) {
+      alert('Количество мест должно быть положительным числом');
+      return;
     }
-  };
+    setSeatsPerRow(num);
+    
+    const newConfig = hallConfig.map(row => 
+      row.slice(0, num).map(seat => seat || 'standart')
+    );
+    
+    while (newConfig.length < rows) {
+      newConfig.push(Array(num).fill('standart'));
+    }
+    
+    setHallConfig(newConfig);
+  }
+};
 
   const handleSeatClick = (row, seat) => {
     if (!selectedHall) return;
@@ -1007,6 +1017,14 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Добавление фильма</h3>
+              <button 
+          className="popup-close-btn" 
+          onClick={() => {
+            setShowFilmPopup(false);
+            setPosterFile(null);
+            setPosterPreview(null);
+          }}
+        />
             </div>
 
             <div className="popup-form">
@@ -1093,6 +1111,10 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Удаление фильма</h3>
+               <button 
+          className="popup-close-btn" 
+          onClick={() => setShowDeleteFilmPopup(false)}
+        />
             </div>
             <div className="popup-form">
               <p>Вы уверены, что хотите удалить этот фильм? Все связанные сеансы также будут удалены.</p>
@@ -1120,6 +1142,13 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Добавление зала</h3>
+               <button 
+          className="popup-close-btn" 
+          onClick={() => {
+            setShowAddHallPopup(false);
+            setNewHallName('');
+          }}
+        />
             </div>
             <div className="popup-form">
               <div className="form-group">
@@ -1155,6 +1184,10 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Удаление зала</h3>
+              <button 
+          className="popup-close-btn" 
+          onClick={() => setShowDeleteHallPopup(false)}
+        />
             </div>
             <div className="popup-form">
               <p>Вы уверены, что хотите удалить этот зал? Все связанные сеансы также будут удалены.</p>
@@ -1182,6 +1215,10 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Добавление сеанса</h3>
+               <button 
+          className="popup-close-btn" 
+          onClick={() => setShowSeancePopup(false)}
+        />
             </div>
             <div className="popup-form">
               <div className="form-group">
@@ -1245,6 +1282,10 @@ const AdminPanel = ({ onLogout }) => {
           <div className="popup-content">
             <div className="popup-header">
               <h3>Удаление сеанса</h3>
+              <button 
+          className="popup-close-btn" 
+          onClick={() => setShowDeleteSeancePopup(false)}
+        />
             </div>
             <div className="popup-form">
               <p>Вы уверены, что хотите удалить этот сеанс?</p>
